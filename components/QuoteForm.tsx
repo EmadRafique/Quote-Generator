@@ -57,35 +57,42 @@ export default function QuoteForm() {
 
   const handleSubmit = () => {
     const matchingQuotes = quotesData
-      .filter(q => q.topic.toLowerCase() === topic.toLowerCase())
+      .filter((q) => q.topic.toLowerCase() === topic.toLowerCase())
       .slice(0, 3)
-      .map(q => q.quote);
+      .map((q) => q.quote);
 
     setQuotes(matchingQuotes);
   };
 
   return (
     <div className="max-w-xl w-full bg-white/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl space-y-6 border border-white/30 transition-all hover:scale-[1.01]">
-      <h2 className="text-3xl font-bold text-white text-center drop-shadow">✨ Get 3 Inspiring Quotes</h2>
+      <h2 className="text-3xl font-bold text-white text-center drop-shadow">
+        ✨ Get 3 Inspiring Quotes
+      </h2>
       <Input
         placeholder="Type a topic e.g. love, courage, travel..."
         value={topic}
         onChange={(e) => setTopic(e.target.value)}
         className="bg-white/80 rounded-xl placeholder:text-gray-500"
       />
-      <Button className="w-full" onClick={handleSubmit}>
+      <Button className="w-full hover:scale-[1.02] transition-transform duration-200" onClick={handleSubmit}>
         Get Quotes
       </Button>
 
       <ul className="space-y-2 text-white/90">
         {quotes.length > 0 ? (
           quotes.map((q, idx) => (
-            <li key={idx} className="bg-white/10 p-3 rounded-md border border-white/10 shadow-sm backdrop-blur-sm">
+            <li
+              key={idx}
+              className="bg-white/10 p-3 rounded-md border border-white/10 shadow-sm backdrop-blur-sm"
+            >
               • {q}
             </li>
           ))
         ) : (
-          <li className="text-sm text-white/60 text-center">No quotes yet — try topics like "dreams", "travel", "sports"</li>
+          <li className="text-sm text-white/60 text-center">
+            No quotes yet — try topics like &quot;dreams&quot;, &quot;travel&quot;, &quot;sports&quot;
+          </li>
         )}
       </ul>
     </div>
