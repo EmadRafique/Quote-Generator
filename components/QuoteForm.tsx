@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const quotesData = [
   // Life
-  { topic: "life", quote: "Life is what happens when you're busy making other plans." },
+  { topic: "life", quote: "Life is what happens when you are busy making other plans." },
   { topic: "life", quote: "Life is short. Smile while you still have teeth." },
   { topic: "life", quote: "The purpose of life is a life of purpose." },
 
@@ -16,7 +16,7 @@ const quotesData = [
   { topic: "success", quote: "Success is walking from failure to failure with no loss of enthusiasm." },
 
   // Love
-  { topic: "love", quote: "Love isn't something you find. Love is something that finds you." },
+  { topic: "love", quote: "Love is not something you find. Love is something that finds you." },
   { topic: "love", quote: "To love and be loved is to feel the sun from both sides." },
   { topic: "love", quote: "Where there is love, there is life." },
 
@@ -27,8 +27,8 @@ const quotesData = [
 
   // Sports
   { topic: "sports", quote: "Champions keep playing until they get it right." },
-  { topic: "sports", quote: "Winning means you're willing to go longer, work harder, and give more." },
-  { topic: "sports", quote: "Hard work beats talent when talent doesn't work hard." },
+  { topic: "sports", quote: "Winning means you are willing to go longer, work harder, and give more." },
+  { topic: "sports", quote: "Hard work beats talent when talent does not work hard." },
 
   // Dreams
   { topic: "dreams", quote: "All our dreams can come true if we have the courage to pursue them." },
@@ -37,7 +37,7 @@ const quotesData = [
 
   // Failure
   { topic: "failure", quote: "Failure is simply the opportunity to begin again, this time more intelligently." },
-  { topic: "failure", quote: "Don't fear failure. Fear being in the exact same place next year." },
+  { topic: "failure", quote: "Do not fear failure. Fear being in the exact same place next year." },
   { topic: "failure", quote: "Every failure is a step closer to success." },
 
   // Courage
@@ -46,9 +46,34 @@ const quotesData = [
   { topic: "courage", quote: "Be bold. Be brave. Be fearless." },
 
   // Patience
-  { topic: "patience", quote: "Patience is not the ability to wait, but the ability to keep a good attitude while waiting." },
+  { topic: "patience", quote: "Patience is not the ability to wait, but to keep a good attitude while waiting." },
   { topic: "patience", quote: "Great things take time. Be patient." },
   { topic: "patience", quote: "Patience is bitter, but its fruit is sweet." },
+
+  // Mindfulness
+  { topic: "mindfulness", quote: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment." },
+  { topic: "mindfulness", quote: "Mindfulness is a way of befriending ourselves and our experience." },
+  { topic: "mindfulness", quote: "Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor." },
+
+  // Creativity
+  { topic: "creativity", quote: "Creativity is intelligence having fun." },
+  { topic: "creativity", quote: "You cannot use up creativity. The more you use, the more you have." },
+  { topic: "creativity", quote: "The creative adult is the child who survived." },
+
+  // Resilience
+  { topic: "resilience", quote: "Resilience is knowing that you are the only one that has the power to pick yourself up." },
+  { topic: "resilience", quote: "It is not the strongest or most intelligent who survive, but those most adaptable to change." },
+  { topic: "resilience", quote: "Fall seven times, stand up eight." },
+
+  // Time
+  { topic: "time", quote: "Lost time is never found again." },
+  { topic: "time", quote: "Time is what we want most, but what we use worst." },
+  { topic: "time", quote: "The key is in not spending time, but in investing it." },
+
+  // Kindness
+  { topic: "kindness", quote: "Kindness is a language the deaf can hear and the blind can see." },
+  { topic: "kindness", quote: "No act of kindness, no matter how small, is ever wasted." },
+  { topic: "kindness", quote: "Be kind whenever possible. It is always possible." },
 ];
 
 export default function QuoteForm() {
@@ -70,12 +95,15 @@ export default function QuoteForm() {
         ✨ Get 3 Inspiring Quotes
       </h2>
       <Input
-        placeholder="Type a topic e.g. love, courage, travel..."
+        placeholder="Type a topic e.g. love, resilience, mindfulness..."
         value={topic}
         onChange={(e) => setTopic(e.target.value)}
         className="bg-white/80 rounded-xl placeholder:text-gray-500"
       />
-      <Button className="w-full hover:scale-[1.02] transition-transform duration-200" onClick={handleSubmit}>
+      <Button
+        onClick={handleSubmit}
+        className="w-full hover:scale-[1.02] transition-transform duration-200"
+      >
         Get Quotes
       </Button>
 
@@ -91,7 +119,7 @@ export default function QuoteForm() {
           ))
         ) : (
           <li className="text-sm text-white/60 text-center">
-            No quotes yet — try topics like &quot;dreams&quot;, &quot;travel&quot;, &quot;sports&quot;
+            No quotes yet — try topics like &quot;dreams&quot;, &quot;resilience&quot;, &quot;kindness&quot;
           </li>
         )}
       </ul>
